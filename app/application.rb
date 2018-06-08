@@ -5,13 +5,7 @@ class Application
     req = Rack::Request.new(env)
 
 
-    if req.path.match(/items/)
-
-      item_name = req.path.split("/items/").last
-      item = Item.all.find{|s| s.name == item_name}
-
-      resp.write item.name
-    end
+    if @@item.include(item)
 
     if req.path=="/items"
       resp.write "You requested the items"
