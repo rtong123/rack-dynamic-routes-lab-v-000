@@ -6,6 +6,7 @@ class Application
 
 
     if @@item.include(item)
+      return item.price
 
     if req.path=="/items"
       resp.write "You requested the items"
