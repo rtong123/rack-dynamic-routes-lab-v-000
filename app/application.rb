@@ -5,7 +5,7 @@ class Application
     req = Rack::Request.new(env)
 
 
-    if @@items.include(item)
+    if Item.all.include(item)
       return item.price
     else
       resp.write "Route not found"
