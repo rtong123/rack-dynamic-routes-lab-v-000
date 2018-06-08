@@ -7,6 +7,11 @@ class Application
 
     if @@item.include(item)
       return item.price
+    else
+      resp.write "Route not found"
+      resp.status = 404
+    end
+
 
     if req.path=="/items"
       resp.write "You requested the items"
